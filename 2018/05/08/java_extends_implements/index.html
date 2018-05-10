@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Windows," />
+  <meta name="keywords" content="extends,implements," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="1、Win+R运行regedit，打开注册表编辑器 2、定位到：HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon 3、在Winlogon右键新建“项”，命名为SpecialAccounts 4、在SpecialAccounts右键新建“项”，命名为UserList 5、在UserList右键新建DWOR">
-<meta name="keywords" content="Windows">
+<meta name="description" content="extends 是继承某一个类，继承后可以使用、重写父类的方法1class A extends B; implements 是实现多个接口，接口的方法一般为空，需重写才能使用12class A implements B;class A implements B,C,D;">
+<meta name="keywords" content="extends,implements">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Win7&#x2F;8&#x2F;10隐藏登录界面用户">
-<meta property="og:url" content="http://www.dshy.top/2018/05/01/win_loginhide/index.html">
+<meta property="og:title" content="extends和implements">
+<meta property="og:url" content="http://www.dshy.top/2018/05/08/java_extends_implements/index.html">
 <meta property="og:site_name" content="Xiong">
-<meta property="og:description" content="1、Win+R运行regedit，打开注册表编辑器 2、定位到：HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon 3、在Winlogon右键新建“项”，命名为SpecialAccounts 4、在SpecialAccounts右键新建“项”，命名为UserList 5、在UserList右键新建DWOR">
+<meta property="og:description" content="extends 是继承某一个类，继承后可以使用、重写父类的方法1class A extends B; implements 是实现多个接口，接口的方法一般为空，需重写才能使用12class A implements B;class A implements B,C,D;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-01T17:40:51.985Z">
+<meta property="og:updated_time" content="2018-05-10T14:14:04.374Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Win7&#x2F;8&#x2F;10隐藏登录界面用户">
-<meta name="twitter:description" content="1、Win+R运行regedit，打开注册表编辑器 2、定位到：HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon 3、在Winlogon右键新建“项”，命名为SpecialAccounts 4、在SpecialAccounts右键新建“项”，命名为UserList 5、在UserList右键新建DWOR">
+<meta name="twitter:title" content="extends和implements">
+<meta name="twitter:description" content="extends 是继承某一个类，继承后可以使用、重写父类的方法1class A extends B; implements 是实现多个接口，接口的方法一般为空，需重写才能使用12class A implements B;class A implements B,C,D;">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://www.dshy.top/2018/05/01/win_loginhide/"/>
+  <link rel="canonical" href="http://www.dshy.top/2018/05/08/java_extends_implements/"/>
 
 
 
 
 
-  <title>Win7/8/10隐藏登录界面用户 | Xiong</title>
+  <title>extends和implements | Xiong</title>
   
 
 
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.dshy.top/2018/05/01/win_loginhide/">
+    <link itemprop="mainEntityOfPage" href="http://www.dshy.top/2018/05/08/java_extends_implements/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Deng Genxiong">
@@ -250,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Win7/8/10隐藏登录界面用户</h1>
+          <h1 class="post-title" itemprop="name headline">extends和implements</h1>
         
 
         <div class="post-meta">
@@ -262,8 +262,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-01T21:37:17+08:00">
-                2018-05-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-08T00:45:46+08:00">
+                2018-05-08
               </time>
             
 
@@ -272,6 +272,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -300,11 +322,8 @@
       
 
       
-        <p>1、Win+R运行regedit，打开注册表编辑器</p>
-<p>2、定位到：HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon</p>
-<p>3、在Winlogon右键新建“项”，命名为SpecialAccounts</p>
-<p>4、在SpecialAccounts右键新建“项”，命名为UserList</p>
-<p>5、在UserList右键新建DWORD（32位）值，命名为用户名，数值数据为0</p>
+        <p>extends 是继承某一个类，继承后可以使用、重写父类的方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> <span class="keyword">extends</span> <span class="title">B</span></span>;</span><br></pre></td></tr></table></figure></p>
+<p>implements 是实现多个接口，接口的方法一般为空，需重写才能使用<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> <span class="keyword">implements</span> <span class="title">B</span></span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> <span class="keyword">implements</span> <span class="title">B</span>,<span class="title">C</span>,<span class="title">D</span></span>;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -322,7 +341,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Windows/" rel="tag"># Windows</a>
+            <a href="/tags/extends/" rel="tag"># extends</a>
+          
+            <a href="/tags/implements/" rel="tag"># implements</a>
           
         </div>
       
@@ -335,8 +356,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/27/hello/" rel="next" title="你好">
-                <i class="fa fa-chevron-left"></i> 你好
+              <a href="/2018/05/08/win_run/" rel="next" title="Win注册表启动项">
+                <i class="fa fa-chevron-left"></i> Win注册表启动项
               </a>
             
           </div>
@@ -345,8 +366,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/01/mstsc_null/" rel="prev" title="Win远程桌面设置不使用密码登录">
-                Win远程桌面设置不使用密码登录 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/08/java_@Override/" rel="prev" title="标签@Override的作用">
+                标签@Override的作用 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
