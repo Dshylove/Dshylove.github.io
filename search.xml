@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Parameter和Attribute]]></title>
+    <url>%2F2018%2F05%2F10%2Fjava_Parameter_Attribute%2F</url>
+    <content type="text"><![CDATA[参数（Parameter）是由客户端（浏览器）提供，使用request.getParameter()读取，值只能读取不能修改，数据类型为String类型，因此客户端的参数值只能是简单类型的，而不能是复杂类型的，比如一个对象 属性（Attribute）是由服务器端（JSP或者Servlet）利用request.setAttribute()设置，值可以读取也可以修改，使用request.getAttribute()读取，值可以是任意一个Object类型的，即可以传对象]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Parameter</tag>
+        <tag>Attribute</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[标签@Override的作用]]></title>
+    <url>%2F2018%2F05%2F08%2Fjava_%40Override%2F</url>
+    <content type="text"><![CDATA[@Override是伪代码，可写可不写，它表示方法重写，作用如下： 1．可以当注释用，方便阅读2．标注这是方法的复写3．编译时编译器会验证@Override下面的方法名是否是父类中的，不是则报错]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[extends和implements]]></title>
+    <url>%2F2018%2F05%2F08%2Fjava_extends_implements%2F</url>
+    <content type="text"><![CDATA[extends 是继承某一个类，继承后可以使用、重写父类的方法1class A extends B; implements 是实现多个接口，接口的方法一般为空，需重写才能使用12class A implements B;class A implements B,C,D;]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>extends</tag>
+        <tag>implements</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Win注册表启动项]]></title>
+    <url>%2F2018%2F05%2F08%2Fwin_run%2F</url>
+    <content type="text"><![CDATA[对所有用户HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run 对当前用户HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run]]></content>
+      <tags>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Win远程桌面设置多用户同时登录]]></title>
+    <url>%2F2018%2F05%2F01%2Fmstsc_multiuser%2F</url>
+    <content type="text"><![CDATA[1、Win+R运行gpedit.msc，打开组策略 2、依次展开：计算机配置——管理模板——Windows组件——远程桌面服务——远程桌面会话主机——连接，设置“限制连接的数量” 3、再找到“将远程桌面服务用户限制到单独的远程桌面服务会话”，设置为已禁用 4、下载一个解除远程桌面多用户连接限制补丁Universal Termsrv Patch]]></content>
+      <tags>
+        <tag>Windows</tag>
+        <tag>远程桌面</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Win远程桌面设置不使用密码登录]]></title>
+    <url>%2F2018%2F05%2F01%2Fmstsc_null%2F</url>
+    <content type="text"><![CDATA[1、Win+R运行gpedit.msc，打开组策略 2、依次展开：计算机配置——WINDOWS设置——安全设置——本地策略——安全选项 3、右侧找到“账户：使用空密码的本地账户只允许进行控制台登录”，设置为“禁用”]]></content>
+      <tags>
+        <tag>Windows</tag>
+        <tag>远程桌面</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Win7/8/10隐藏登录界面用户]]></title>
+    <url>%2F2018%2F05%2F01%2Fwin_loginhide%2F</url>
+    <content type="text"><![CDATA[1、Win+R运行regedit，打开注册表编辑器 2、定位到：HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon 3、在Winlogon右键新建“项”，命名为SpecialAccounts 4、在SpecialAccounts右键新建“项”，命名为UserList 5、在UserList右键新建DWORD（32位）值，命名为用户名，数值数据为0]]></content>
+      <tags>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[你好]]></title>
+    <url>%2F2018%2F04%2F27%2Fhello%2F</url>
+    <content type="text"><![CDATA[这是我的第一篇博文。]]></content>
+      <tags>
+        <tag>hello</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2018%2F04%2F26%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
