@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[JD-GUI——Java反编译工具]]></title>
+    <url>%2F2018%2F05%2F14%2Fjava_JD-GUI%2F</url>
+    <content type="text"><![CDATA[最近因为有反编译class文件的需求，接触了一些Java反编译工具，并且对比了各大反编译工具，感觉最好用的是JD-GUI，支持直接反编译jar包，而且开源免费。官网：http://jd.benow.caGitHub：https://github.com/java-decompiler下载：https://github.com/java-decompiler/jd-gui/releases]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>反编译</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[try和finally中的return]]></title>
     <url>%2F2018%2F05%2F14%2Fjava_try_finally_return%2F</url>
     <content type="text"><![CDATA[当try语句结束时总会执行finally语句。这确保即使发生了一个意想不到的异常也会执行finally语句。finally的用处不仅是用来处理异常——它可以让程序员不会因为return、continue、或break语句而忽略了清理代码。把清理代码放在finally语句块里是个很好的做法，即便不会有异常发生也要这样做。 注意，当try或者catch的代码在运行的时候，JVM退出了。那么finally语句块就不会执行。同样，如果线程在运行try或者catch的代码时被中断了或者被killed，那么finally语句可能也不会执行了，即使整个运用还会继续执行。 如果try语句里有return，那么代码的行为如下：1.如果有返回值，就把返回值保存到局部变量中2.执行jsr指令跳到finally语句里执行3.执行完finally语句后，返回之前保存在局部变量表里的值 示例代码：12345678910111213141516171819class Test &#123; public int test() &#123; int x = 1; try &#123; return ++x; &#125; catch (Exception e) &#123; &#125; finally &#123; ++x; &#125; return x; &#125; public static void main(String[] args) &#123; Test t = new Test(); System.out.println(t.test()); &#125;&#125; 输出结果为2]]></content>
