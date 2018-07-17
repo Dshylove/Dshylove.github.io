@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[JD-GUI——Java反编译工具]]></title>
     <url>%2F2018%2F05%2F14%2Fjava_JD-GUI%2F</url>
-    <content type="text"><![CDATA[最近因为有反编译class文件的需求，接触了一些Java反编译工具，并且对比了各大反编译工具，感觉最好用的是JD-GUI，支持直接反编译jar包，而且开源免费。官网：http://jd.benow.caGitHub：https://github.com/java-decompiler下载：https://github.com/java-decompiler/jd-gui/releases]]></content>
+    <content type="text"><![CDATA[最近因为有反编译class文件的需求，接触了一些Java反编译工具，并且对比了各大反编译工具，感觉最好用的是JD-GUI，支持直接反编译jar包，而且开源免费。 官网：http://jd.benow.caGitHub：https://github.com/java-decompiler下载：https://github.com/java-decompiler/jd-gui/releases]]></content>
       <categories>
         <category>Java</category>
       </categories>
