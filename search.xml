@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Java反编译工具——JD-GUI]]></title>
+    <title><![CDATA[【Spring MVC】关于RESTful规范支持问题]]></title>
+    <url>%2F2018%2F10%2F22%2FSpringMVC_RESTful%2F</url>
+    <content type="text"><![CDATA[RESTful风格之文件上传使用PUT方法提交修改操作提交form表单到RESTful风格的URL地址时，由于form表单只有GET和POST两种提交方法，需要在form中埋一个hidden的input标签，如：1&lt;input type="hidden" name="_method" value="PUT"/&gt; 然后form表单设置method提交方式为POST 为了让Spring MVC支持form表单hidden方法提交的RESTful风格，需要在web.xml中配置一个filter过滤器HiddenHttpMethodFilter 当提交表单含有“文件上传”，即表单属性enctype=”multipart/form-data”时，还需要在该过滤器前配置一个MultipartFilter过滤器，然后需要将Spring MVC的文件上传解析器CommonsMultipartResolver配置在contextConfigLocation对应的上下文配置中（而不能配置在DispatcherServlet的上下文中，因为。。。）此时，Spring MVC就可以解析带文件上传的PUT请求了，即能够将请求映射到对应URL且为PUT方式的Handler中 RESTful风格之数据绑定注解@PathVariable当Spring MVC使用RESTful风格的URL地址时，例如：value=”/ad/{id}” 如果使用Java基本类型（或其包装类）作为接收数据的参数，则需要加上注解@PathVariable，例如：@PathVariable(“id”)Long id 如果使用自定义类作为接收参数，则无需加注解，因为Spring MVC可以通过“Java反射”得到自定义类的属性名，从而完成数据绑定~ 注解@RequestParam当Spring MVC接收普通表单值时（非RESTful风格参数） 如果使用Java基本类型（或其包装类）作为接收数据的参数，则需要加上注解@RequestParam，例如：@RequestParam(“id”)Long id 否则，当关闭调试器的添加变量属性到生成的class文件中（即编译时不生成调试信息到class文件中）时，而调试信息包括参数的变量名，此时参数无法接收数据。当将工程发布到线上服务器时，有可能因为编译的问题，导致未加此注解的参数出问题~ 如果使用自定义类作为接收参数，则无需加注解，同理~~]]></content>
+      <categories>
+        <category>Spring MVC</category>
+      </categories>
+      <tags>
+        <tag>RESTful</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【Java】反编译工具——JD-GUI]]></title>
     <url>%2F2018%2F05%2F14%2Fjava_JD-GUI%2F</url>
     <content type="text"><![CDATA[最近因为有反编译class文件的需求，接触了一些Java反编译工具，并且对比了各大反编译工具，感觉最好用的是JD-GUI，支持直接反编译jar包，而且开源免费。 官网：http://jd.benow.caGitHub：https://github.com/java-decompiler下载：https://github.com/java-decompiler/jd-gui/releases]]></content>
       <categories>
@@ -12,7 +23,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[try和finally中的return]]></title>
+    <title><![CDATA[【Java】try和finally中的return]]></title>
     <url>%2F2018%2F05%2F14%2Fjava_try_finally_return%2F</url>
     <content type="text"><![CDATA[当try语句结束时总会执行finally语句。这确保即使发生了一个意想不到的异常也会执行finally语句。finally的用处不仅是用来处理异常——它可以让程序员不会因为return、continue、或break语句而忽略了清理代码。把清理代码放在finally语句块里是个很好的做法，即便不会有异常发生也要这样做。 注意，当try或者catch的代码在运行的时候，JVM退出了。那么finally语句块就不会执行。同样，如果线程在运行try或者catch的代码时被中断了或者被killed，那么finally语句可能也不会执行了，即使整个运用还会继续执行。 如果try语句里有return，那么代码的行为如下：1.如果有返回值，就把返回值保存到局部变量中2.执行jsr指令跳到finally语句里执行3.执行完finally语句后，返回之前保存在局部变量表里的值 示例代码：12345678910111213141516171819class Test &#123; public int test() &#123; int x = 1; try &#123; return ++x; &#125; catch (Exception e) &#123; &#125; finally &#123; ++x; &#125; return x; &#125; public static void main(String[] args) &#123; Test t = new Test(); System.out.println(t.test()); &#125;&#125; 输出结果为2]]></content>
       <categories>
@@ -23,7 +34,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Parameter和Attribute]]></title>
+    <title><![CDATA[【Java】Parameter和Attribute]]></title>
     <url>%2F2018%2F05%2F10%2Fjava_Parameter_Attribute%2F</url>
     <content type="text"><![CDATA[参数（Parameter）是由客户端（浏览器）提供，使用request.getParameter()读取，值只能读取不能修改，数据类型为String类型，因此客户端的参数值只能是简单类型的，而不能是复杂类型的，比如一个对象 属性（Attribute）是由服务器端（JSP或者Servlet）利用request.setAttribute()设置，值可以读取也可以修改，使用request.getAttribute()读取，值可以是任意一个Object类型的，即可以传对象]]></content>
       <categories>
@@ -35,7 +46,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[标签@Override的作用]]></title>
+    <title><![CDATA[【Java】标签@Override的作用]]></title>
     <url>%2F2018%2F05%2F08%2Fjava_%40Override%2F</url>
     <content type="text"><![CDATA[@Override是伪代码，可写可不写，它表示方法重写，作用如下： 1．可以当注释用，方便阅读2．标注这是方法的复写3．编译时编译器会验证@Override下面的方法名是否是父类中的，不是则报错]]></content>
       <categories>
@@ -43,7 +54,7 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[extends和implements]]></title>
+    <title><![CDATA[【Java】extends和implements]]></title>
     <url>%2F2018%2F05%2F08%2Fjava_extends_implements%2F</url>
     <content type="text"><![CDATA[extends 是继承某一个类，继承后可以使用、重写父类的方法1class A extends B; implements 是实现多个接口，接口的方法一般为空，需重写才能使用12class A implements B;class A implements B,C,D;]]></content>
       <categories>
@@ -55,35 +66,47 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Win注册表启动项]]></title>
+    <title><![CDATA[【Win】注册表启动项]]></title>
     <url>%2F2018%2F05%2F08%2Fwin_run%2F</url>
     <content type="text"><![CDATA[对所有用户HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run 对当前用户HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
       <tags>
         <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Win远程桌面设置多用户同时登录]]></title>
-    <url>%2F2018%2F05%2F01%2Fmstsc_multiuser%2F</url>
+    <title><![CDATA[【Win】远程桌面设置多用户同时登录]]></title>
+    <url>%2F2018%2F05%2F01%2Fwin_mstsc_multiuser%2F</url>
     <content type="text"><![CDATA[1、Win+R运行gpedit.msc，打开组策略 2、依次展开：计算机配置——管理模板——Windows组件——远程桌面服务——远程桌面会话主机——连接，设置“限制连接的数量” 3、再找到“将远程桌面服务用户限制到单独的远程桌面服务会话”，设置为已禁用 4、下载一个解除远程桌面多用户连接限制补丁Universal Termsrv Patch]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
       <tags>
         <tag>Windows</tag>
         <tag>远程桌面</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Win远程桌面设置不使用密码登录]]></title>
-    <url>%2F2018%2F05%2F01%2Fmstsc_null%2F</url>
+    <title><![CDATA[【Win】远程桌面设置不使用密码登录]]></title>
+    <url>%2F2018%2F05%2F01%2Fwin_mstsc_null%2F</url>
     <content type="text"><![CDATA[1、Win+R运行gpedit.msc，打开组策略 2、依次展开：计算机配置——WINDOWS设置——安全设置——本地策略——安全选项 3、右侧找到“账户：使用空密码的本地账户只允许进行控制台登录”，设置为“禁用”]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
       <tags>
         <tag>Windows</tag>
         <tag>远程桌面</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Win7/8/10隐藏登录界面用户]]></title>
+    <title><![CDATA[【Win】7/8/10隐藏登录界面用户]]></title>
     <url>%2F2018%2F05%2F01%2Fwin_loginhide%2F</url>
     <content type="text"><![CDATA[1、Win+R运行regedit，打开注册表编辑器 2、定位到：HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon 3、在Winlogon右键新建“项”，命名为SpecialAccounts 4、在SpecialAccounts右键新建“项”，命名为UserList 5、在UserList右键新建DWORD（32位）值，命名为用户名，数值数据为0]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
       <tags>
         <tag>Windows</tag>
       </tags>

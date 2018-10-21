@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="RESTful," />
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Xiong">
-<meta property="og:url" content="http://dshy.top/archives/2018/index.html">
+<meta name="description" content="RESTful风格之文件上传使用PUT方法提交修改操作提交form表单到RESTful风格的URL地址时，由于form表单只有GET和POST两种提交方法，需要在form中埋一个hidden的input标签，如：1&amp;lt;input type=&quot;hidden&quot; name=&quot;_method&quot; value=&quot;PUT&quot;/&amp;gt; 然后form表单设置method提交方式为POST 为了让Spring M">
+<meta name="keywords" content="RESTful">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【Spring MVC】关于RESTful规范支持问题">
+<meta property="og:url" content="http://dshy.top/2018/10/22/SpringMVC_RESTful/index.html">
 <meta property="og:site_name" content="Xiong">
+<meta property="og:description" content="RESTful风格之文件上传使用PUT方法提交修改操作提交form表单到RESTful风格的URL地址时，由于form表单只有GET和POST两种提交方法，需要在form中埋一个hidden的input标签，如：1&amp;lt;input type=&quot;hidden&quot; name=&quot;_method&quot; value=&quot;PUT&quot;/&amp;gt; 然后form表单设置method提交方式为POST 为了让Spring M">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-10-21T18:38:25.042Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Xiong">
+<meta name="twitter:title" content="【Spring MVC】关于RESTful规范支持问题">
+<meta name="twitter:description" content="RESTful风格之文件上传使用PUT方法提交修改操作提交form表单到RESTful风格的URL地址时，由于form表单只有GET和POST两种提交方法，需要在form中埋一个hidden的input标签，如：1&amp;lt;input type=&quot;hidden&quot; name=&quot;_method&quot; value=&quot;PUT&quot;/&amp;gt; 然后form表单设置method提交方式为POST 为了让Spring M">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://dshy.top/archives/2018/"/>
+  <link rel="canonical" href="http://dshy.top/2018/10/22/SpringMVC_RESTful/"/>
 
 
 
 
 
-  <title>归档 | Xiong</title>
+  <title>【Spring MVC】关于RESTful规范支持问题 | Xiong</title>
   
 
 
@@ -140,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -278,407 +283,180 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://dshy.top/2018/10/22/SpringMVC_RESTful/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Deng Genxiong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xiong">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">【Spring MVC】关于RESTful规范支持问题</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-22T02:06:40+08:00">
+                2018-10-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 10 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Spring-MVC/" itemprop="url" rel="index">
+                    <span itemprop="name">Spring MVC</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/10/22/SpringMVC_RESTful/" itemprop="url">
-              
-                <span itemprop="name">【Spring MVC】关于RESTful规范支持问题</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-22T02:06:40+08:00"
-              content="2018-10-22" >
-          10-22
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/14/java_JD-GUI/" itemprop="url">
-              
-                <span itemprop="name">【Java】反编译工具——JD-GUI</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-14T22:25:48+08:00"
-              content="2018-05-14" >
-          05-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/14/java_try_finally_return/" itemprop="url">
-              
-                <span itemprop="name">【Java】try和finally中的return</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-14T22:24:00+08:00"
-              content="2018-05-14" >
-          05-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <h2 id="RESTful风格之文件上传"><a href="#RESTful风格之文件上传" class="headerlink" title="RESTful风格之文件上传"></a>RESTful风格之文件上传</h2><h3 id="使用PUT方法提交修改操作"><a href="#使用PUT方法提交修改操作" class="headerlink" title="使用PUT方法提交修改操作"></a>使用PUT方法提交修改操作</h3><p>提交form表单到RESTful风格的URL地址时，由于form表单只有GET和POST两种提交方法，需要在form中埋一个hidden的input标签，如：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"_method"</span> <span class="attr">value</span>=<span class="string">"PUT"</span>/&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>然后form表单设置method提交方式为POST</p>
+<p>为了让Spring MVC支持form表单hidden方法提交的RESTful风格，需要在web.xml中配置一个filter过滤器HiddenHttpMethodFilter</p>
+<p>当提交表单含有“文件上传”，即表单属性enctype=”multipart/form-data”时，<br>还需要在该过滤器前配置一个MultipartFilter过滤器，<br>然后需要将Spring MVC的文件上传解析器CommonsMultipartResolver配置在contextConfigLocation对应的上下文配置中<br>（而不能配置在DispatcherServlet的上下文中，因为。。。）<br>此时，Spring MVC就可以解析带文件上传的PUT请求了，即能够将请求映射到对应URL且为PUT方式的Handler中</p>
+<hr>
+<h2 id="RESTful风格之数据绑定"><a href="#RESTful风格之数据绑定" class="headerlink" title="RESTful风格之数据绑定"></a>RESTful风格之数据绑定</h2><h3 id="注解-PathVariable"><a href="#注解-PathVariable" class="headerlink" title="注解@PathVariable"></a>注解@PathVariable</h3><p>当Spring MVC使用RESTful风格的URL地址时，例如：value=”/ad/{id}”</p>
+<p>如果使用Java基本类型（或其包装类）作为接收数据的参数，则需要加上注解@PathVariable，例如：@PathVariable(“id”)Long id</p>
+<p>如果使用自定义类作为接收参数，则无需加注解，因为Spring MVC可以通过“Java反射”得到自定义类的属性名，从而完成数据绑定~</p>
+<h3 id="注解-RequestParam"><a href="#注解-RequestParam" class="headerlink" title="注解@RequestParam"></a>注解@RequestParam</h3><p>当Spring MVC接收普通表单值时（非RESTful风格参数）</p>
+<p>如果使用Java基本类型（或其包装类）作为接收数据的参数，则需要加上注解@RequestParam，例如：@RequestParam(“id”)Long id</p>
+<p>否则，当关闭调试器的添加变量属性到生成的class文件中（即编译时不生成调试信息到class文件中）时，而调试信息包括参数的变量名，此时参数无法接收数据。<br>当将工程发布到线上服务器时，有可能因为编译的问题，导致未加此注解的参数出问题~</p>
+<p>如果使用自定义类作为接收参数，则无需加注解，同理~~</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/10/java_Parameter_Attribute/" itemprop="url">
-              
-                <span itemprop="name">【Java】Parameter和Attribute</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-10T22:58:46+08:00"
-              content="2018-05-10" >
-          05-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/08/java_@Override/" itemprop="url">
-              
-                <span itemprop="name">【Java】标签@Override的作用</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-08T00:45:55+08:00"
-              content="2018-05-08" >
-          05-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/08/java_extends_implements/" itemprop="url">
-              
-                <span itemprop="name">【Java】extends和implements</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-08T00:45:46+08:00"
-              content="2018-05-08" >
-          05-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/08/win_run/" itemprop="url">
-              
-                <span itemprop="name">【Win】注册表启动项</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-08T00:45:37+08:00"
-              content="2018-05-08" >
-          05-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/01/win_mstsc_multiuser/" itemprop="url">
-              
-                <span itemprop="name">【Win】远程桌面设置多用户同时登录</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-01T23:27:32+08:00"
-              content="2018-05-01" >
-          05-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/01/win_mstsc_null/" itemprop="url">
-              
-                <span itemprop="name">【Win】远程桌面设置不使用密码登录</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-01T23:24:17+08:00"
-              content="2018-05-01" >
-          05-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/01/win_loginhide/" itemprop="url">
-              
-                <span itemprop="name">【Win】7/8/10隐藏登录界面用户</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-01T21:37:17+08:00"
-              content="2018-05-01" >
-          05-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/RESTful/" rel="tag"># RESTful</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/14/java_JD-GUI/" rel="next" title="【Java】反编译工具——JD-GUI">
+                <i class="fa fa-chevron-left"></i> 【Java】反编译工具——JD-GUI
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -686,6 +464,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -706,8 +488,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -767,6 +558,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#RESTful风格之文件上传"><span class="nav-number">1.</span> <span class="nav-text">RESTful风格之文件上传</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用PUT方法提交修改操作"><span class="nav-number">1.1.</span> <span class="nav-text">使用PUT方法提交修改操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RESTful风格之数据绑定"><span class="nav-number">2.</span> <span class="nav-text">RESTful风格之数据绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注解-PathVariable"><span class="nav-number">2.1.</span> <span class="nav-text">注解@PathVariable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注解-RequestParam"><span class="nav-number">2.2.</span> <span class="nav-text">注解@RequestParam</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -904,6 +711,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

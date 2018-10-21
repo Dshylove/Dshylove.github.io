@@ -293,6 +293,159 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://dshy.top/2018/10/22/SpringMVC_RESTful/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Deng Genxiong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xiong">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/22/SpringMVC_RESTful/" itemprop="url">【Spring MVC】关于RESTful规范支持问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-22T02:06:40+08:00">
+                2018-10-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Spring-MVC/" itemprop="url" rel="index">
+                    <span itemprop="name">Spring MVC</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="RESTful风格之文件上传"><a href="#RESTful风格之文件上传" class="headerlink" title="RESTful风格之文件上传"></a>RESTful风格之文件上传</h2><h3 id="使用PUT方法提交修改操作"><a href="#使用PUT方法提交修改操作" class="headerlink" title="使用PUT方法提交修改操作"></a>使用PUT方法提交修改操作</h3><p>提交form表单到RESTful风格的URL地址时，由于form表单只有GET和POST两种提交方法，需要在form中埋一个hidden的input标签，如：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"_method"</span> <span class="attr">value</span>=<span class="string">"PUT"</span>/&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>然后form表单设置method提交方式为POST</p>
+<p>为了让Spring MVC支持form表单hidden方法提交的RESTful风格，需要在web.xml中配置一个filter过滤器HiddenHttpMethodFilter</p>
+<p>当提交表单含有“文件上传”，即表单属性enctype=”multipart/form-data”时，<br>还需要在该过滤器前配置一个MultipartFilter过滤器，<br>然后需要将Spring MVC的文件上传解析器CommonsMultipartResolver配置在contextConfigLocation对应的上下文配置中<br>（而不能配置在DispatcherServlet的上下文中，因为。。。）<br>此时，Spring MVC就可以解析带文件上传的PUT请求了，即能够将请求映射到对应URL且为PUT方式的Handler中</p>
+<hr>
+<h2 id="RESTful风格之数据绑定"><a href="#RESTful风格之数据绑定" class="headerlink" title="RESTful风格之数据绑定"></a>RESTful风格之数据绑定</h2><h3 id="注解-PathVariable"><a href="#注解-PathVariable" class="headerlink" title="注解@PathVariable"></a>注解@PathVariable</h3><p>当Spring MVC使用RESTful风格的URL地址时，例如：value=”/ad/{id}”</p>
+<p>如果使用Java基本类型（或其包装类）作为接收数据的参数，则需要加上注解@PathVariable，例如：@PathVariable(“id”)Long id</p>
+<p>如果使用自定义类作为接收参数，则无需加注解，因为Spring MVC可以通过“Java反射”得到自定义类的属性名，从而完成数据绑定~</p>
+<h3 id="注解-RequestParam"><a href="#注解-RequestParam" class="headerlink" title="注解@RequestParam"></a>注解@RequestParam</h3><p>当Spring MVC接收普通表单值时（非RESTful风格参数）</p>
+<p>如果使用Java基本类型（或其包装类）作为接收数据的参数，则需要加上注解@RequestParam，例如：@RequestParam(“id”)Long id</p>
+<p>否则，当关闭调试器的添加变量属性到生成的class文件中（即编译时不生成调试信息到class文件中）时，而调试信息包括参数的变量名，此时参数无法接收数据。<br>当将工程发布到线上服务器时，有可能因为编译的问题，导致未加此注解的参数出问题~</p>
+<p>如果使用自定义类作为接收参数，则无需加注解，同理~~</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://dshy.top/2018/05/14/java_JD-GUI/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -312,7 +465,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/14/java_JD-GUI/" itemprop="url">Java反编译工具——JD-GUI</a></h1>
+                <a class="post-title-link" href="/2018/05/14/java_JD-GUI/" itemprop="url">【Java】反编译工具——JD-GUI</a></h1>
         
 
         <div class="post-meta">
@@ -457,7 +610,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/14/java_try_finally_return/" itemprop="url">try和finally中的return</a></h1>
+                <a class="post-title-link" href="/2018/05/14/java_try_finally_return/" itemprop="url">【Java】try和finally中的return</a></h1>
         
 
         <div class="post-meta">
@@ -615,7 +768,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/10/java_Parameter_Attribute/" itemprop="url">Parameter和Attribute</a></h1>
+                <a class="post-title-link" href="/2018/05/10/java_Parameter_Attribute/" itemprop="url">【Java】Parameter和Attribute</a></h1>
         
 
         <div class="post-meta">
@@ -766,7 +919,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/08/java_@Override/" itemprop="url">标签@Override的作用</a></h1>
+                <a class="post-title-link" href="/2018/05/08/java_@Override/" itemprop="url">【Java】标签@Override的作用</a></h1>
         
 
         <div class="post-meta">
@@ -911,7 +1064,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/08/java_extends_implements/" itemprop="url">extends和implements</a></h1>
+                <a class="post-title-link" href="/2018/05/08/java_extends_implements/" itemprop="url">【Java】extends和implements</a></h1>
         
 
         <div class="post-meta">
@@ -1054,7 +1207,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/08/win_run/" itemprop="url">Win注册表启动项</a></h1>
+                <a class="post-title-link" href="/2018/05/08/win_run/" itemprop="url">【Win】注册表启动项</a></h1>
         
 
         <div class="post-meta">
@@ -1076,6 +1229,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Windows/" itemprop="url" rel="index">
+                    <span itemprop="name">Windows</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -1156,7 +1331,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://dshy.top/2018/05/01/mstsc_multiuser/">
+    <link itemprop="mainEntityOfPage" href="http://dshy.top/2018/05/01/win_mstsc_multiuser/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Deng Genxiong">
@@ -1175,7 +1350,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/01/mstsc_multiuser/" itemprop="url">Win远程桌面设置多用户同时登录</a></h1>
+                <a class="post-title-link" href="/2018/05/01/win_mstsc_multiuser/" itemprop="url">【Win】远程桌面设置多用户同时登录</a></h1>
         
 
         <div class="post-meta">
@@ -1197,6 +1372,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Windows/" itemprop="url" rel="index">
+                    <span itemprop="name">Windows</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -1279,7 +1476,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://dshy.top/2018/05/01/mstsc_null/">
+    <link itemprop="mainEntityOfPage" href="http://dshy.top/2018/05/01/win_mstsc_null/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Deng Genxiong">
@@ -1298,7 +1495,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/01/mstsc_null/" itemprop="url">Win远程桌面设置不使用密码登录</a></h1>
+                <a class="post-title-link" href="/2018/05/01/win_mstsc_null/" itemprop="url">【Win】远程桌面设置不使用密码登录</a></h1>
         
 
         <div class="post-meta">
@@ -1320,6 +1517,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Windows/" itemprop="url" rel="index">
+                    <span itemprop="name">Windows</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -1420,7 +1639,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/01/win_loginhide/" itemprop="url">Win7/8/10隐藏登录界面用户</a></h1>
+                <a class="post-title-link" href="/2018/05/01/win_loginhide/" itemprop="url">【Win】7/8/10隐藏登录界面用户</a></h1>
         
 
         <div class="post-meta">
@@ -1442,6 +1661,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Windows/" itemprop="url" rel="index">
+                    <span itemprop="name">Windows</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -1558,7 +1799,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1569,7 +1810,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1580,7 +1821,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
