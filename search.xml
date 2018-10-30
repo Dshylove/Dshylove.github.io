@@ -12,8 +12,19 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[【Spring MVC】笔记]]></title>
+    <url>%2F2018%2F06%2F12%2FSpringMVC_note%2F</url>
+    <content type="text"><![CDATA[Spring MVC和Struts2的区别1、Spring MVC基于方法开发，Struts2基于类开发 2、Spring MVC：可以使用–&gt;单例模式（建议使用单例开发）。因为基于方法开发的，通过形参接收参数，方法执行结束，形参数据销毁 3、Struts2：无法使用单例，只能使用多例开发。因为基于类开发的，通过类的成员变量接收参数 4、Spring MVC的controller开发更趋近于service开发，是因为基于方法开发的 5、Struts2速度慢在于使用struts标签，如果使用Struts2建议使用jstl Spring MVC配置1、当在web.xml中使用了DispatcherServlet截获所有请求url时，在引入静态文件，例如js时，需要加入mvc:default-servlet-handler/ 从而使用默认的Servlet来响应静态文件。如果没有加入该配置，则执行时页面会报404错误。 数据校验由于Validation框架通过硬编码完成数据校验，因此现代开发推荐使用JSR 303完成数据校验 拦截器Interceptor拦截器主要作用是拦截用户的请求并进行相应的处理，应用中每个控制器都需要重复执行的通用操作，比如：用户权限验证、判断用户是否登录等。 1、通过request.getServletPath()获取请求路径进行判断是否需要拦截 2、也可以在DispatcherServlet的上下文中的mvc:interceptor中配置&lt;mvc:exclude-mapping path=””/&gt;以忽略请求路径]]></content>
+      <categories>
+        <category>Spring MVC</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[【MyBatis】笔记]]></title>
-    <url>%2F2018%2F07%2F21%2FMyBatis_note%2F</url>
+    <url>%2F2018%2F06%2F01%2FMyBatis_note%2F</url>
     <content type="text"><![CDATA[实体类pojo属性类型1、在实体类中不要使用基本类型，如果用类似int基本类型，在传递给后台的时候，会传入默认值0，对sql的查询有影响 2、pojo属性应使用包装类，因为包装类的默认值为null 3、表的主键字段应该用Long pojo属性列名关系一对多–&gt;List集合 多对一–&gt;id外键，引用id外键pojo对象 一对多XML配置：一对多所关联的集合对象，一般设置成lazy延迟加载 在实际开发中，一对多关系通常映射为集合对象，而由于多方的数据量可能很大，所以通常使用延迟加载； 而多对一关系只是关联到一个对象，所以通常使用多表连接直接把数据提取出来 延迟加载和Spring集成时，要确保只能在Service层调用延迟加载的属性。 当结果从Service层返回至Controller层时，此时已超出SqlSession生命周期，如果获取延迟加载的属性值，会因为SqlSession已经关闭而抛出异常。 延迟加载需在mybatis-config.xml中配置以下两个属性1234&lt;settings&gt; &lt;setting name="lazyLoadingEnabled" value="true"/&gt; &lt;setting name="aggressiveLazyLoading" value="false"/&gt;&lt;/settings&gt; resultMapJavaType用来指定pojo中属性的类型，ofType指定的是映射到list集合属性中pojo的类型 当多表查询返回的结果集中有同名列如id时，resultMap中column属性若为id，则MyBatis会默认使用查询出的第一个id列。为了区分，最好给列取一个别名。 缓存机制MyBatis的缓存机制是基于id进行缓存的。在一级缓存，SqlSession对象中有一个HashMap用于存储缓存数据，HashMap的key对应对象的id，value值保存对象。 一级缓存是SqlSession级别的，默认开启； 二级缓存是mapper级别的，多个SqlSession共享，其作用域是mapper的同一个namespace，根据不同的mapper有不同的namespace来区分； MyBatis和Spring整合后：1、依赖注入框架Spring可以创建线程安全的SqlSession 2、在【非事务】场景下执行时，一级缓存会失效。因为每次调用完mapper的方法都会关闭SqlSession 3、在开启事务控制的Service中执行时，一级缓存有效。当事务提交后，即Service方法结束时，SqlSession才关闭。因此在Service方法中共用一个SqlSession 二级缓存的应用场景对于访问多的查询请求且用户对查询结果实时性要求不高，此时可采用MyBatis二级缓存技术降低数据库访问量，提高访问速度。 例如：耗时较高的统计分析SQL、电话账单查询SQL 实现方法：通过设置刷新间隔时间，由MyBatis每隔一段时间自动清空缓存，根据数据变化频率设置缓存刷新间隔flushInterval 比如设置为30分钟、60分钟、24小时等 二级缓存的局限性比如对商品信息进行缓存，当只需修改一个或部分商品信息时，所有商品信息的缓存数据都会被清空。 解决此类问题：需要在业务层根据需求对数据针对性缓存 应避免使用二级缓存，参考博客]]></content>
       <categories>
         <category>MyBatis</category>
