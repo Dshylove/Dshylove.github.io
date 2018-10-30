@@ -14,7 +14,7 @@
   <entry>
     <title><![CDATA[【Spring MVC】笔记]]></title>
     <url>%2F2018%2F06%2F12%2FSpringMVC_note%2F</url>
-    <content type="text"><![CDATA[Spring MVC和Struts2的区别1、Spring MVC基于方法开发，Struts2基于类开发 2、Spring MVC：可以使用–&gt;单例模式（建议使用单例开发）。因为基于方法开发的，通过形参接收参数，方法执行结束，形参数据销毁 3、Struts2：无法使用单例，只能使用多例开发。因为基于类开发的，通过类的成员变量接收参数 4、Spring MVC的controller开发更趋近于service开发，是因为基于方法开发的 5、Struts2速度慢在于使用struts标签，如果使用Struts2建议使用jstl Spring MVC配置1、当在web.xml中使用了DispatcherServlet截获所有请求url时，在引入静态文件，例如js时，需要加入mvc:default-servlet-handler/ 从而使用默认的Servlet来响应静态文件。如果没有加入该配置，则执行时页面会报404错误。 数据校验由于Validation框架通过硬编码完成数据校验，因此现代开发推荐使用JSR 303完成数据校验 拦截器Interceptor拦截器主要作用是拦截用户的请求并进行相应的处理，应用中每个控制器都需要重复执行的通用操作，比如：用户权限验证、判断用户是否登录等。 1、通过request.getServletPath()获取请求路径进行判断是否需要拦截 2、也可以在DispatcherServlet的上下文中的mvc:interceptor中配置&lt;mvc:exclude-mapping path=””/&gt;以忽略请求路径]]></content>
+    <content type="text"><![CDATA[Spring MVC和Struts2的区别1、Spring MVC基于方法开发，Struts2基于类开发 2、Spring MVC：可以使用–&gt;单例模式（建议使用单例开发）。因为基于方法开发的，通过形参接收参数，方法执行结束，形参数据销毁 3、Struts2：无法使用单例，只能使用多例开发。因为基于类开发的，通过类的成员变量接收参数 4、Spring MVC的controller开发更趋近于service开发，是因为基于方法开发的 5、Struts2速度慢在于使用struts标签，如果使用Struts2建议使用jstl Spring MVC配置1、当在web.xml中使用了DispatcherServlet截获所有请求url时，在引入静态文件，例如js时，需要加入&lt;mvc:default-servlet-handler/&gt; 从而使用默认的Servlet来响应静态文件。如果没有加入该配置，则执行时页面会报404错误。 数据校验由于Validation框架通过硬编码完成数据校验，因此现代开发推荐使用JSR 303完成数据校验 拦截器Interceptor拦截器主要作用是拦截用户的请求并进行相应的处理，应用中每个控制器都需要重复执行的通用操作，比如：用户权限验证、判断用户是否登录等。 1、通过request.getServletPath()获取请求路径进行判断是否需要拦截 2、也可以在DispatcherServlet的上下文中的&lt;mvc:interceptor&gt;中配置&lt;mvc:exclude-mapping path=””/&gt;以忽略请求路径]]></content>
       <categories>
         <category>Spring MVC</category>
       </categories>

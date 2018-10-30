@@ -544,12 +544,12 @@
 <p>3、Struts2：无法使用单例，只能使用多例开发。因为基于类开发的，通过类的成员变量接收参数</p>
 <p>4、Spring MVC的controller开发更趋近于service开发，是因为基于方法开发的</p>
 <p>5、Struts2速度慢在于使用struts标签，如果使用Struts2建议使用jstl</p>
-<h2 id="Spring-MVC配置"><a href="#Spring-MVC配置" class="headerlink" title="Spring MVC配置"></a>Spring MVC配置</h2><p>1、当在web.xml中使用了DispatcherServlet截获所有请求url时，在引入静态文件，例如js时，需要加入<a href="mvc:default-servlet-handler/" target="_blank" rel="noopener">mvc:default-servlet-handler/</a></p>
+<h2 id="Spring-MVC配置"><a href="#Spring-MVC配置" class="headerlink" title="Spring MVC配置"></a>Spring MVC配置</h2><p>1、当在web.xml中使用了DispatcherServlet截获所有请求url时，在引入静态文件，例如js时，需要加入&lt;mvc:default-servlet-handler/&gt;</p>
 <p>从而使用默认的Servlet来响应静态文件。如果没有加入该配置，则执行时页面会报404错误。</p>
 <h2 id="数据校验"><a href="#数据校验" class="headerlink" title="数据校验"></a>数据校验</h2><p>由于Validation框架通过硬编码完成数据校验，因此现代开发推荐使用JSR 303完成数据校验</p>
 <h2 id="拦截器"><a href="#拦截器" class="headerlink" title="拦截器"></a>拦截器</h2><p>Interceptor拦截器主要作用是拦截用户的请求并进行相应的处理，应用中每个控制器都需要重复执行的通用操作，比如：用户权限验证、判断用户是否登录等。</p>
 <p>1、通过request.getServletPath()获取请求路径进行判断是否需要拦截</p>
-<p>2、也可以在DispatcherServlet的上下文中的<a href="mvc:interceptor" target="_blank" rel="noopener">mvc:interceptor</a>中配置&lt;mvc:exclude-mapping path=””/&gt;以忽略请求路径</p>
+<p>2、也可以在DispatcherServlet的上下文中的&lt;mvc:interceptor&gt;中配置&lt;mvc:exclude-mapping path=””/&gt;以忽略请求路径</p>
 
           
         
