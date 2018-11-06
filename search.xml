@@ -9,6 +9,19 @@
       </categories>
       <tags>
         <tag>RESTful</tag>
+        <tag>Spring MVC</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【Maven】笔记]]></title>
+    <url>%2F2018%2F06%2F20%2FMaven_note%2F</url>
+    <content type="text"><![CDATA[常用命令1.清理：mvn clean将项目根目录下的target目录清理掉 2.编译：mvn compile将项目中.java文件编译为.class文件 3.单元测试：mvn test单元测试类名要求为：XxxTest.java将项目中src\test\java目录下的单元测试类都执行测试 4.打包：mvn packageJava Project –&gt;jar包Web Project –&gt;war包将项目打包到项目根目录下的target目录 5.安装：mvn install将项目package打包到本地仓库 6.运行web项目：mvn tomcat:run 生命周期在maven中存在三套生命周期，每一套生命周期相互独立，互不影响。 在一套生命周期内，执行后面的命令时前面的命令都会按顺序自动执行。 CleanLifeCycle:清理生命周期 clean DefaultLifeCycle:默认生命周期 compile、test、package、install、deploy SiteLifeCycle:站点生命周期 site 依赖范围使用到tomcat自带的jar包，需将项目中依赖作用范围设置为：provided——编译、测试时有效，运行时无效。 例如：servlet-api、jsp-api Debug调试调试时需要关联源码，否则导致断点无法进入 私服仓库类型hosted：宿主仓库存放本公司开发的jar包（正式版、测试版、第三方如Oracle等存在版权问题的） proxy：代理仓库代理中央仓库，Apache下测试版本的jar包 group：组仓库包含hosted宿主仓库、proxy代理仓库（开发时连接group组仓库）]]></content>
+      <categories>
+        <category>Maven</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>Maven</tag>
       </tags>
   </entry>
   <entry>
@@ -20,6 +33,7 @@
       </categories>
       <tags>
         <tag>笔记</tag>
+        <tag>Spring MVC</tag>
       </tags>
   </entry>
   <entry>
@@ -31,6 +45,7 @@
       </categories>
       <tags>
         <tag>笔记</tag>
+        <tag>MyBatis</tag>
       </tags>
   </entry>
   <entry>

@@ -446,6 +446,167 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://dshy.top/2018/06/20/Maven_note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Deng Genxiong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xiong">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/20/Maven_note/" itemprop="url">【Maven】笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-20T20:37:33+08:00">
+                2018-06-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Maven/" itemprop="url" rel="index">
+                    <span itemprop="name">Maven</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>1.清理：mvn clean<br>将项目根目录下的target目录清理掉</p>
+<p>2.编译：mvn compile<br>将项目中.java文件编译为.class文件</p>
+<p>3.单元测试：mvn test<br>单元测试类名要求为：XxxTest.java<br>将项目中src\test\java目录下的单元测试类都执行测试</p>
+<p>4.打包：mvn package<br>Java Project –&gt;jar包<br>Web Project –&gt;war包<br>将项目打包到项目根目录下的target目录</p>
+<p>5.安装：mvn install<br>将项目package打包到本地仓库</p>
+<p>6.运行web项目：mvn tomcat:run</p>
+<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><p>在maven中存在三套生命周期，每一套生命周期相互独立，互不影响。</p>
+<p>在一套生命周期内，执行后面的命令时前面的命令都会按顺序自动执行。</p>
+<p>CleanLifeCycle:清理生命周期</p>
+<pre><code>clean
+</code></pre><p>DefaultLifeCycle:默认生命周期</p>
+<pre><code>compile、test、package、install、deploy
+</code></pre><p>SiteLifeCycle:站点生命周期</p>
+<pre><code>site
+</code></pre><h2 id="依赖范围"><a href="#依赖范围" class="headerlink" title="依赖范围"></a>依赖范围</h2><p>使用到tomcat自带的jar包，需将项目中依赖作用范围设置为：provided——编译、测试时有效，运行时无效。</p>
+<p>例如：servlet-api、jsp-api</p>
+<h2 id="Debug调试"><a href="#Debug调试" class="headerlink" title="Debug调试"></a>Debug调试</h2><p>调试时需要关联源码，否则导致断点无法进入</p>
+<h2 id="私服仓库类型"><a href="#私服仓库类型" class="headerlink" title="私服仓库类型"></a>私服仓库类型</h2><p>hosted：宿主仓库<br>存放本公司开发的jar包（正式版、测试版、第三方如Oracle等存在版权问题的）</p>
+<p>proxy：代理仓库<br>代理中央仓库，Apache下测试版本的jar包</p>
+<p>group：组仓库<br>包含hosted宿主仓库、proxy代理仓库（开发时连接group组仓库）</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://dshy.top/2018/06/12/SpringMVC_note/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1636,151 +1797,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://dshy.top/2018/05/01/win_mstsc_multiuser/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Deng Genxiong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xiong">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/01/win_mstsc_multiuser/" itemprop="url">【Win】远程桌面设置多用户同时登录</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-01T23:27:32+08:00">
-                2018-05-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Windows/" itemprop="url" rel="index">
-                    <span itemprop="name">Windows</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>1、Win+R运行gpedit.msc，打开组策略</p>
-<p>2、依次展开：计算机配置——管理模板——Windows组件——远程桌面服务——远程桌面会话主机——连接，设置“限制连接的数量”</p>
-<p>3、再找到“将远程桌面服务用户限制到单独的远程桌面服务会话”，设置为已禁用</p>
-<p>4、下载一个解除远程桌面多用户连接限制补丁Universal Termsrv Patch</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1831,7 +1847,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1842,7 +1858,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1853,7 +1869,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
